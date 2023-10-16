@@ -18,7 +18,7 @@ let printMyName2 = printName.bind(name2, "delhi"); //virat Kohli
 printMyName1("maharashtra"); 
 printMyName2("Delhi_state"); 
 
-//////////// 
+////////////  Polyfill for bind function
 
 Function.prototype.Mybind = function(...args) { 
  // this --> printName()
