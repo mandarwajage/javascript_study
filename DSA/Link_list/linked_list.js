@@ -17,7 +17,7 @@ class LinkedList {
     this.head = newNode;
   }
 
-  count() {
+  size() {
     let current = this.head;
     let counter = 0;
     while(current.next)
@@ -66,6 +66,25 @@ class LinkedList {
     current.next = newNode;
   }
 
-    
+  print() {
+    let current = this.head;
+    let str = "";
+    while(current){
+      str = str + current.data + " -- "
+      current = current.next ;
+    }
+    console.log(str);    
+  } 
 }
+
+const LL = new LinkedList() ;
+LL.addFirst(55);
+LL.addFirst(88);
+LL.addFirst(5);
+LL.addFirst(75);
+LL.addLast(100);
+
+LL.print()
+
+LL.addAt(5 , 29);
 
