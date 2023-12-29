@@ -1,23 +1,26 @@
-function bubble_sort(arr){
-  let n = arr.length;
-  c = 0;
-  for( let i = 0 ; i < n -1; i++) // outer loop , if elemets are 5 , we will do 4 itteration
-  {
-    for( let j = 0 ; j < n -1 - i ; j++) 
-    /*doing -i , beacause after , in 2nd itteration , 1 last element is alredy sorted , so i = 1 , so we can stop before that last element , in 3rd iteration , i =2 ,
-    means last 2 ele are sorted , so we are stoping before last 2 elements */
-    {
-      c++; // just for counting itteraitons
-      if (arr[j] > arr[j+1]){
-        arr[j], arr[j+1] = arr[j+1], arr[j];
+function bubbleSort(arr) {
+  const n = arr.length;
+
+  // Iterate through the entire array
+  for (let i = 0; i < n - 1; i++) {
+    // Last i elements are already sorted, so we don't need to check them
+    for (let j = 0; j < n - 1 - i; j++) {
+      // Compare adjacent elements and swap them if they are in the wrong order
+      if (arr[j] > arr[j + 1]) {
+        // Swap arr[j] and arr[j + 1]
+        const temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
       }
     }
   }
 
-  console.log(c); // 28
-  console.log(arr); // [ 1, 2,  2,  4, 4, 7, 11, 87]
+  return arr;
 }
 
-const arr = [2,4,1,2,7,4,87,11]; 
+// Example usage:
+const unsortedArray = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5];
+const sortedArray = bubbleSort(unsortedArray);
 
-bubble_sort(arr);
+console.log("Unsorted Array:", unsortedArray);
+console.log("Sorted Array:", sortedArray);
